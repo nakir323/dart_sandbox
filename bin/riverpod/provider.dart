@@ -9,10 +9,10 @@ void main() {
 
   // Providerの値を無理やり変える例
   // Testのためにモックに切り替えたりするときにProviderScopeを介してこのようなことをするみたい
-  // 後でoverrideしたい奴は最初からoverridesに登録しておかないといけない
   final container = ProviderContainer(
       overrides: [helloWorldProvider.overrideWithValue('hello')]);
   print(container.read(helloWorldProvider)); // hello
+  // overrideしたProviderをさらにUpdateする例
   container.updateOverrides([helloWorldProvider.overrideWithValue('world')]);
   print(container.read(helloWorldProvider)); // world
 }
