@@ -19,5 +19,5 @@ void main() {
   print(container.read(stateProvider).state); // Bar
 
   container.listen(stateProvider, (value) => print);
-  container.read(stateProvider).state = 'Baz'; // 何も起きない。listenに登録したprintは起動しない。
+  container.read(stateProvider).state = 'Baz'; // 何も起きない。listenで登録したprintは起動しない。
 }

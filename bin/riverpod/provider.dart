@@ -20,5 +20,5 @@ void main() {
   container.listen(helloWorldProvider, (value) => print(value));
   container.updateOverrides([
     helloWorldProvider.overrideWithValue('hello world')
-  ]); // listenが起動して 'hello world' が出力される
+  ]); // listenしているので 'hello world' が出力される
 }
