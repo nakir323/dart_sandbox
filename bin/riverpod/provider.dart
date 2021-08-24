@@ -15,4 +15,10 @@ void main() {
   // overrideしたProviderをさらにUpdateする例
   container.updateOverrides([helloWorldProvider.overrideWithValue('world')]);
   print(container.read(helloWorldProvider)); // world
+
+  // listenを試す
+  container.listen(helloWorldProvider, (value) => print(value));
+  container.updateOverrides([
+    helloWorldProvider.overrideWithValue('hello world')
+  ]); // listenが起動して 'hello world' が出力される
 }
