@@ -18,6 +18,8 @@ void main() {
   container.read(stateProvider).state = 'Bar';
   print(container.read(stateProvider).state); // Bar
 
-  container.listen(stateProvider, (value) => print);
-  container.read(stateProvider).state = 'Baz'; // 何も起きない。listenで登録したprintは起動しない。
+  // listenを試す
+  container.listen<StateController<String>>(
+      stateProvider, (value) => print(value.state));
+  container.read(stateProvider).state = 'Baz'; // Baz listenで登録したprintが起動する
 }
