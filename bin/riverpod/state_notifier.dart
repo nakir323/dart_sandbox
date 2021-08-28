@@ -8,6 +8,6 @@ class Counter extends StateNotifier<int> {
 
 void main() {
   final counter = Counter();
-  counter.addListener((state) => print(state));
-  counter.increment();
+  counter.addListener((state) => print(state)); // 0
+  counter.increment(); // 1
 }
