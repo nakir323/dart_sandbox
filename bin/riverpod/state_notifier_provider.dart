@@ -13,7 +13,5 @@ void main() {
   print(container.read(counterProvider)); // 0
   container.read(counterProvider.notifier).increment();
   print(container.read(counterProvider)); // 1
-  // final test = container
-  //     .readProviderElement(counterProvider)
-  //     .watch<int>(counterProvider);
+  print(ProviderContainer().read(counterProvider)); // 0
 }
