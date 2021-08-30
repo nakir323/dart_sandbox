@@ -10,10 +10,10 @@ final fooProvider = Provider<void Function()>((_) {
 
 final _countProvider = StateProvider((_) => 0);
 
-final _someLogicProvider = Provider((ref) => _SomeLogic(ref.read));
+final _logicProvider = Provider((ref) => _Logic(ref.read));
 
-class _SomeLogic {
-  _SomeLogic(this.read);
+class _Logic {
+  _Logic(this.read);
 
   final Reader read;
 
@@ -30,7 +30,7 @@ void main() {
   final container = ProviderContainer();
   container.read(hogeProvider); // fooProvider
 
-  container.read(_someLogicProvider).printCount(); // 0
-  container.read(_someLogicProvider).incrementCount();
-  container.read(_someLogicProvider).printCount(); // 1
+  container.read(_logicProvider).printCount(); // 0
+  container.read(_logicProvider).incrementCount();
+  container.read(_logicProvider).printCount(); // 1
 }
